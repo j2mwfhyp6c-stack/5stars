@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <!-- Google Analytics Tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PGJ299X8W4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PGJ299X8W4');
+    </script>
+
+    <!-- Fast Redirect & Tracking Script -->
+    <script>
+      (function() {
+        // ضع رابط تقييم قوقل أو المنيو الخاص بالمطعم هنا
+        var defaultDestination = "https://g.page/r/YOUR_RESTAURANT_REVIEW_LINK"; 
+
+        var urlParams = new URLSearchParams(window.location.search);
+        var utmSource = urlParams.get('utm_source');
+        var utmMedium = urlParams.get('utm_medium');
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'nfc_scan', {
+            'event_category': 'NFC Engagement',
+            'event_label': utmSource || 'Direct Scan',
+            'table_id': utmMedium || 'General'
+          });
+        }
+
+        // تحويل فوري ومباشر بدقتين دون أي انتظار
+        window.location.replace(defaultDestination);
+      })();
+    </script>
+</head>
+<body style="background-color: #ffffff; margin: 0; padding: 0;">
+</body>
+</html>
